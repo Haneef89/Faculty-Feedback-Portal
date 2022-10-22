@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SVCE Kadapa</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="svce faculty feedback portal" />
+	<meta name="keywords" content="svcekadapa svce svck kadapa" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<script src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+	<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+	<style type="text/css">
+		@media print {
+			* {
+				overflow: visible !important;
+			}
+
+			body * {
+				visibility: hidden;
+			}
+
+			#c-report,
+			#c-report * {
+				visibility: visible;
+			}
+
+			#c-report {
+				position: absolute;
+				left: 0;
+				top: -330px;
+				page-break-after: always;
+			}
+		}
+
+		@media print {
+			@page {
+				size: landscape
+			}
+		}
+	</style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled sidebar-enabled">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="page d-flex flex-column flex-column-fluid">
+			<!--begin::Header-->
+			<div id="kt_header" class="header align-items-stretch">
+				<!--begin::Container-->
+				<div class="container-xxl d-flex align-items-stretch justify-content-between">
+					<!--begin::Brand-->
+					<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 w-lg-225px me-5">
+						<!--begin::Aside mobile toggle-->
+						<div class="btn btn-icon btn-active-icon-primary ms-n2 me-2 d-flex d-lg-none"
+							id="kt_aside_toggle">
+							<!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+							<span class="svg-icon svg-icon-1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none">
+									<path
+										d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
+										fill="black" />
+									<path opacity="0.3"
+										d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z"
+										fill="black" />
+								</svg>
+							</span>
+							<!--end::Svg Icon-->
+						</div>
+						<!--end::Aside mobile toggle-->
+						<!--begin::Logo-->
+						<a href="#">
+							<img alt="Logo" src="/assets/media/logos/svce.png" class="d-none d-lg-inline h-50px" />
+							<img alt="Logo" src="/assets/media/logos/svce.png" class="d-lg-none h-35px" />
+						</a>
+						<!--end::Logo-->
+					</div>
+					<!--end::Brand-->
+					<!--begin::Wrapper-->
+					<div class="d-flex align-items-stretch justify-content-between ml-auto">
+						<!--begin::Toolbar wrapper-->
+						<div class="d-flex align-items-stretch flex-shrink-0">
+							<!--begin::Search-->
+							<div class="d-flex align-items-stretch ms-1 ms-lg-2">
+								<!--begin::Search-->
+								<div id="kt_header_search" class="d-flex align-items-stretch"
+									data-kt-search-keypress="true" data-kt-search-min-length="2"
+									data-kt-search-enter="enter" data-kt-search-layout="menu"
+									data-kt-menu-trigger="auto" data-kt-menu-overflow="false"
+									data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
+									<!--begin::Search toggle-->
+									<div class="d-flex align-items-stretch" data-kt-search-element="toggle"
+										id="kt_header_search_toggle">
+
+										<h1 class="fs-2tx fw-bolder text-primary mb-8 mt-auto">Faculty Feedback Portal
+										</h1>
+
+									</div>
+									<!--end::Search toggle-->
+								</div>
+								<!--end::Search-->
+							</div>
+							<!--end::Search-->
+						</div>
+						<!--end::Toolbar wrapper-->
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--end::Container-->
+			</div>
+			<!--end::Header-->
+			<!--begin::Container-->
+			<div id="kt_content_container" class="d-flex flex-column-fluid align-items-stretch container-xxl">
+				<!--begin::Aside-->
+				<div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside"
+					data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+					data-kt-drawer-width="{default:'200px', '300px': '225px'}" data-kt-drawer-direction="start"
+					data-kt-drawer-toggle="#kt_aside_toggle" data-kt-sticky="true" data-kt-sticky-name="aside-sticky"
+					data-kt-sticky-offset="{default: false, lg: '1px'}" data-kt-sticky-width="{lg: '225px'}"
+					data-kt-sticky-left="auto" data-kt-sticky-top="94px" data-kt-sticky-animation="false"
+					data-kt-sticky-zindex="95">
+					<!--begin::Aside nav-->
+					<div class="hover-scroll-overlay-y my-5 my-lg-5 w-100 ps-4 ps-lg-0 pe-4 me-1"
+						id="kt_aside_menu_wrapper" data-kt-scroll="true"
+						data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto"
+						data-kt-scroll-dependencies="#kt_header" data-kt-scroll-wrappers="#kt_aside"
+						data-kt-scroll-offset="5px">
+						<!--begin::Menu-->
+						<div class="menu menu-column menu-active-bg menu-hover-bg menu-title-gray-700 fs-6 menu-rounded w-100"
+							id="#kt_aside_menu" data-kt-menu="true">
+							<!--begin::Heading-->
+							<div class="menu-item">
+								<div class="menu-content pb-2">
+									<span class="menu-section text-muted text-uppercase fs-7 fw-bolder">Menu</span>
+								</div>
+							</div>
+							<!--end::Heading-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/" class="menu-link text-hover-primary">
+									<span class="menu-title"><i class="fi fi-rr-home fs-3"></i>
+										<pre> </pre><span class="ml-5"> Home</span></span>
+								</a>
+							</div>
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/subjects" class="menu-link text-hover-primary">
+									<span class="menu-title"><i class="fi fi-rr-book-alt fs-3"></i>
+										<pre> </pre><span class="ml-5"> Subjects</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--end::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/reports" class="menu-link text-hover-primary active">
+									<span class="menu-title"><i class="fi fi-rr-document fs-3 text-primary"></i>
+										<pre> </pre><span class="ml-5 text-primary"> Reports</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/settings" class="menu-link text-hover-primary">
+									<span class="menu-title"><i class="fi fi-rr-settings fs-3"></i>
+										<pre> </pre><span class="ml-5"> Settings</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a class="menu-link text-hover-primary" id="logout">
+									<span class="menu-title"><i class="fi fi-rr-sign-out-alt fs-3"></i>
+										<pre> </pre><span>Logout</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+						</div>
+						<!--end::Menu-->
+					</div>
+					<!--end::Aside nav-->
+				</div>
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="wrapper d-flex flex-column flex-row-fluid mt-5 mt-lg-10" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content flex-column-fluid" id="kt_content">
+						<div class="card mb-5 mb-xl-8">
+							<!--begin::Header-->
+							<div class="card-header border-0 pt-5">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">Get Reports</span>
+								</h3>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div class="card-body py-3">
+								<!--begin::Input group-->
+								<div class="form-group row pb-3">
+									<div class="col-sm-2">
+										<label class="form-label fw-bolder text-dark fs-6">Branch</label>
+										<select class="form-select" id="branch" name="branch">
+											<option value="cse">CSE</option>
+											<option value="ece">ECE</option>
+											<option value="csm">CSM</option>
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<label class="form-label fw-bolder text-dark fs-6">Year</label>
+										<select class="form-select" id="year" name="year">
+											<option value="1">I</option>
+											<option value="2">II</option>
+											<option value="3">III</option>
+											<option value="4">IV</option>
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<label class="form-label fw-bolder text-dark fs-6">Sem</label>
+										<select class="form-select" id="sem" name="sem">
+											<option value="1">I</option>
+											<option value="2">II</option>
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<label class="form-label fw-bolder text-dark fs-6">Section</label>
+										<select class="form-select" id="section" name="section">
+											<option value=""></option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<label class="form-label fw-bolder text-dark fs-6">Date</label>
+										<select class="form-select" id="date" name="date">
+										</select>
+									</div>
+									<div class="col-sm-2 pt-8">
+										<button class="btn btn-primary" id="generate">Generate</button>
+									</div>
+								</div>
+							</div>
+							<!--begin::Body-->
+						</div>
+						<% if (error) { %>
+						<h1 class="text-danger"><%= error %></h1>
+						<% } %>
+						<% if (report.length != 0) { %>
+						<div class="card mb-5 mb-xl-8">
+							<!--begin::Body-->
+							<div class="card-body py-3">
+								<div id="c-report">
+									<div class="separator separator-dashed border-dark my-10"></div>
+									<h1 class="text-info text-center">Sri Venkateswara College of Engineering</h1>
+									<h4 class="text-center">Balaji Nagar, Kadapa</h4>
+									<div class="separator separator-dashed border-dark my-10"></div>
+									<div>
+										<span class="h3">Consolidated Report of feedback for</span>
+										<% if (report.length !=0) { %>
+										<span class=" h3 text-success"><%= report[0].year %> B.Tech
+											<%= report[0].sem %> Semester <%= report[0].branch.toUpperCase() %>-
+											<%= report[0].section %> Section
+										</span>
+										<% } %>
+									</div>
+									<div class="d-flex justify-content-between mt-5">
+										<p>Feedback taken on : <%= report[0].date %></p>
+										<p>Number of students given feedback : <%= nfg %> / <%= ts %></p>
+									</div>
+									<div class="table-responsive">
+										<table
+											class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3"
+											id="c-xls">
+											<thead>
+												<tr class="fw-bolder text-muted">
+													<th>Subject Code</th>
+													<th>Subject</th>
+													<th>Mentor</th>
+													<th>Teaching and Communication Skills</th>
+													<th>Providing Relevant examples and Doubt Clarification</th>
+													<th>Subject Knowledge</th>
+													<th>On-Time Syllabus Coverage</th>
+													<th>Punctuality (comes to class on time)</th>
+													<th>Awarding marks in an impartial manner</th>
+													<th>Attitude and Behaviour</th>
+													<th>Total Average</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<% report.forEach(r=> { %>
+												<tr>
+													<td>
+														<span class="h6">
+															<%= r.course_id %>
+														</span>
+													</td>
+													<td>
+														<span class="h6">
+															<%= r.name %>
+														</span>
+													</td>
+													<td>
+														<span class="h6">
+															<%= r.mentor %>
+														</span>
+													</td>
+													<td>
+														<%= r.avg.tc %>
+													</td>
+													<td>
+														<%= r.avg.exd %>
+													</td>
+													<td>
+														<%= r.avg.sk %>
+													</td>
+													<td>
+														<%= r.avg.otsc %>
+													</td>
+													<td>
+														<%= r.avg.punc %>
+													</td>
+													<td>
+														<%= r.avg.amim %>
+													</td>
+													<td>
+														<%= r.avg.ab %>
+													</td>
+													<td>
+														<span class="h6 text-danger">
+															<%= r.avg.avg %>
+														</span>
+													</td>
+												</tr>
+												<% }) %>
+
+											</tbody>
+
+										</table>
+									</div>
+									<div class="d-flex justify-content-between mt-20">
+										<p class="h6">HOD</p>
+										<p class="h6">Principal</p>
+									</div>
+								</div>
+								<!--begin::Body-->
+							</div>
+							<div class="card-footer py-3">
+								<button class="btn btn-primary ml-5" onclick="window.print()"><i
+										class="fi fi-rr-form fs-5"></i> Download PDF</button>
+								<button class="btn btn-primary ml-5" onclick="ExportToExcel()"><i
+										class="fi fi-rr-grid-alt fs-5"></i> Download Excel</button>
+								<a class="btn btn-primary ml-5"
+									onclick="gotoURL('/feedback/delete/<%= report[0].year %>/<%= report[0].sem %>/<%= report[0].branch %>/<%= report[0].section %>')">
+									<i class="fi fi-rr-trash fs-5"></i> Delete All Feedback data
+								</a>
+							</div>
+							<script type="text/javascript">
+								function ExportToExcel(type, fn, dl) {
+									var elt = document.getElementById('c-xls');
+									var wb = XLSX.utils.table_to_book(elt, {
+										sheet: "sheet1"
+									});
+									return dl ?
+										XLSX.write(wb, {
+											bookType: type,
+											bookSST: true,
+											type: 'base64'
+										}) :
+										XLSX.writeFile(wb, fn || (
+											'<%= report[0].year %> <%= report[0].sem %> <%= report[0].branch.toUpperCase() %> - <%= report[0].section %> Consolidatary Report.' +
+											(type || 'xlsx')));
+								}
+							</script>
+						</div>
+						<br>
+						<div class="card mb-5 mb-xl-8">
+							<!--begin::Header-->
+							<div class="card-header border-0 pt-5">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">Get Subject Wise Report</span>
+								</h3>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div class="card-body py-3">
+
+								<div class="form-group row pb-3">
+									<div class="form-group col-sm-6">
+										<label class="form-label fw-bolder text-dark fs-6">Subject</label>
+										<select class="form-select" id="sub" name="sub">
+											<% subjects.forEach(sub => { %>
+											<option value="<%= sub._id %>"><%= sub.name %></option>
+											<% }) %>
+										</select>
+									</div>
+									<div class="form-group col-sm-3">
+										<button id="get" class="btn btn-primary mt-8">Get Report</button>
+									</div>
+								</div>
+								<!--begin::Table container-->
+								<br>
+								<div>
+									<h4 class="text-primary" id="subject"></h4>
+									<h4 class="text-primary" id="mentor-name"></h4>
+									<h5>Class: <%= report[0].year %> <%= report[0].sem %>
+										<%= report[0].branch.toUpperCase() %> - <%= report[0].section %>
+
+								</div>
+								<div class="mt-5" id="charts">
+									<div class="row">
+										<div class="col-lg-6 chart" id="tc"></div>
+										<div class="col-lg-6 chart" id="exd"></div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6 chart" id="sk"></div>
+										<div class="col-lg-6 chart" id="otsc"></div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6 chart" id="punc"></div>
+										<div class="col-lg-6 chart" id="amim"></div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6 chart" id="ab"></div>
+									</div>
+								</div>
+								<div class="table-responsive">
+									<!--begin::Table-->
+									<table id="feedback-data"
+										class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+										<!--begin::Table head-->
+										<thead>
+											<tr class="fw-bolder text-muted">
+												<th scope="col">Roll No</th>
+												<th scope="col">Teaching skills & Communication
+													skills</th>
+												<th scope="col">Providing Relevant examples & Doubts
+													clarification</th>
+												<th scope="col">Subject Knowledge</th>
+												<th scope="col">On-Time Syllabus Coverage</th>
+												<th scope="col">Punctuality (comes to class on time)
+												</th>
+												<th scope="col">Awarding marks in an impartial
+													manner</th>
+												<th scope="col">Attitude and behavior</th>
+											</tr>
+										</thead>
+										<!--end::Table head-->
+										<!--begin::Table body-->
+										<tbody></tbody>
+										<!--end::Table body-->
+									</table>
+									<!--end::Table-->
+									<button class="btn btn-primary ml-5" onclick="download()"><i
+											class="fi fi-rr-grid-alt fs-5"></i> Download Excel</button>
+									<script type="text/javascript">
+										function download(type, fn, dl) {
+											var elt = document.getElementById('feedback-data');
+											var wb = XLSX.utils.table_to_book(elt, {
+												sheet: "sheet1"
+											});
+											return dl ?
+												XLSX.write(wb, {
+													bookType: type,
+													bookSST: true,
+													type: 'base64'
+												}) :
+												XLSX.writeFile(wb, fn || (
+													'<%= report[0].year %> <%= report[0].sem %> <%= report[0].branch.toUpperCase() %> - <%= report[0].section %> .' +
+													(type || 'xlsx')));
+										}
+									</script>
+								</div>
+								<!--end::Table container-->
+								<!--begin::Body-->
+								<h1 class="text-danger mt-5">Pending Users</h1>
+								<div class="table-responsive">
+									<!--begin::Table-->
+									<table id="users"
+										class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+										<!--begin::Table head-->
+										<thead>
+											<tr class="fw-bolder text-muted">
+												<th>Roll No</th>
+												<th>Name</th>
+											</tr>
+										</thead>
+										<!--end::Table head-->
+										<!--begin::Table body-->
+										<tbody>
+										</tbody>
+										<!--end::Table body-->
+									</table>
+									<!--end::Table-->
+									<a onclick="gotoURL('/clear-feedback-status')" class="btn btn-primary ml-5">Clear
+										Feedback Status</a>
+								</div>
+							</div>
+						</div>
+						<% } %>
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+					<div class="d-flex flex-center flex-column-auto p-10">
+						<!--begin::Links-->
+						<div class="d-flex align-items-center fw-bold fs-6">
+							<a href="#" class="text-muted fs-bolder px-2">SVCE Kadapa</a>
+						</div>
+						<!--end::Links-->
+					</div>
+					<!--end::Footer-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Container-->
+		</div>
+		<!--end::Page-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<script src="https://www.google.com/jsapi"></script>
+	<!--begin::Javascript-->
+	<script type="text/javascript">
+		var xhttp = new XMLHttpRequest();
+		window.onload = function () {
+			const button = document.getElementById("logout");
+
+			let branch = document.getElementById("branch");
+			let year = document.getElementById("year");
+			let sem = document.getElementById("sem");
+			let section = document.getElementById("section");
+			let date = document.getElementById("date");
+			let generate = document.getElementById("generate");
+
+			let sub = document.getElementById("sub");
+			let get = document.getElementById("get");
+			google.charts.load('current', {
+				'packages': ['corechart']
+			});
+			let subject = document.getElementById("subject");
+			let mentor = document.getElementById("mentor-name");
+			let titles = {
+				tc: 'Teaching skills & Communication skills',
+				exd: 'Providing Relevant examples & Doubts clarification',
+				sk: 'Subject Knowledge',
+				otsc: 'On-Time Syllabus Coverage',
+				punc: 'Punctuality (comes to class on time)',
+				amim: 'Awarding marks in an impartial manner',
+				ab: 'Attitude and behavior'
+			};
+
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					const res = JSON.parse(xhttp.responseText);
+					console.log(res);
+					if (res.dates && res.dates.length != 0) {
+						$.each(res.dates, function(key, value) {   
+							$('#date')
+								.append($("<option></option>")
+											.attr("value", value)
+											.text(value)); 
+						});
+					}
+					else if (res.subReport && res.subReport.length != 0) {
+						let data = res.subReport.data;
+						let feedback = res.subReport.feedback;
+						let avg = res.subReport.avg;
+						let subjectR = res.subReport.subject;
+						let users = res.subReport.users;
+						subject.innerHTML = subjectR.name + '(' + subjectR.course_id + ')';
+						mentor.innerHTML = 'Mentor: ' + subjectR.mentor;
+						$("tbody tr").remove();
+						let tc = data.tc;
+						let exd = data.exd;
+						let amim = data.amim;
+						let sk = data.sk;
+						let otsc = data.otsc;
+						let punc = data.punc;
+						let ab = data.ab;
+						google.charts.setOnLoadCallback(tcChart);
+						google.charts.setOnLoadCallback(exdChart);
+						google.charts.setOnLoadCallback(skChart);
+						google.charts.setOnLoadCallback(otscChart);
+						google.charts.setOnLoadCallback(puncChart);
+						google.charts.setOnLoadCallback(amimChart);
+						google.charts.setOnLoadCallback(abChart);
+
+						function tcChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', tc["1"]],
+								['Satisfactory', tc["2"]],
+								['Average', tc["3"]],
+								['Good', tc["4"]],
+								['Excellent', tc["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.tc,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("tc"));
+							chart.draw(data, options);
+						}
+
+						function exdChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', exd["1"]],
+								['Satisfactory', exd["2"]],
+								['Average', exd["3"]],
+								['Good', exd["4"]],
+								['Excellent', exd["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.exd,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("exd"));
+							chart.draw(data, options);
+						}
+
+						function skChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', sk["1"]],
+								['Satisfactory', sk["2"]],
+								['Average', sk["3"]],
+								['Good', sk["4"]],
+								['Excellent', sk["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.sk,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("sk"));
+							chart.draw(data, options);
+						}
+
+						function otscChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', otsc["1"]],
+								['Satisfactory', otsc["2"]],
+								['Average', otsc["3"]],
+								['Good', otsc["4"]],
+								['Excellent', otsc["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.otsc,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("otsc"));
+							chart.draw(data, options);
+						}
+
+						function puncChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', punc["1"]],
+								['Satisfactory', punc["2"]],
+								['Average', punc["3"]],
+								['Good', punc["4"]],
+								['Excellent', punc["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.punc,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("punc"));
+							chart.draw(data, options);
+						}
+
+						function amimChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', amim["1"]],
+								['Satisfactory', amim["2"]],
+								['Average', amim["3"]],
+								['Good', amim["4"]],
+								['Excellent', amim["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.amim,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("amim"));
+							chart.draw(data, options);
+						}
+
+						function abChart() {
+							var data = google.visualization.arrayToDataTable([
+								['Performance', 'No of Students'],
+								['Not Satisfactory', ab["1"]],
+								['Satisfactory', ab["2"]],
+								['Average', ab["3"]],
+								['Good', ab["4"]],
+								['Excellent', ab["5"]]
+							]);
+							// Optional; add a title and set the width and height of the chart
+							var options = {
+								'title': titles.ab,
+								'width': 550,
+								'height': 400,
+								colors: ['#377DFF', '#71869D', '#F5CA99', '#ED4C78', '#00C9A7'],
+							};
+
+							// Display the chart inside the <div> element with id="piechart"
+							var chart = new google.visualization.PieChart(document.getElementById("ab"));
+							chart.draw(data, options);
+						}
+						var feedbackTable = document.getElementById('feedback-data').getElementsByTagName('tbody')[0];
+						feedback.forEach(user => {
+							var newRow = feedbackTable.insertRow(feedbackTable.rows.length);
+							newRow.innerHTML = `<td>${user.rollno}</td>
+												<td>${user.tc}</td>
+												<td>${user.exd}</td>
+												<td>${user.sk}</td>
+												<td>${user.otsc}</td>
+												<td>${user.punc}</td>
+												<td>${user.amim}</td>
+												<td>${user.ab}</td>
+												`;
+						})
+						var newRow = feedbackTable.insertRow(feedbackTable.rows.length);
+						newRow.innerHTML = `<td class="fw-bolder text-dark">Average</td>
+											<td class="fw-bolder text-dark">${avg.tc}</td>
+											<td class="fw-bolder text-dark">${avg.exd}</td>
+											<td class="fw-bolder text-dark">${avg.sk}</td>
+											<td class="fw-bolder text-dark">${avg.otsc}</td>
+											<td class="fw-bolder text-dark">${avg.punc}</td>
+											<td class="fw-bolder text-dark">${avg.amim}</td>
+											<td class="fw-bolder text-dark">${avg.ab}</td>
+											`;
+						newRow = feedbackTable.insertRow(feedbackTable.rows.length);
+						newRow.innerHTML = `<td class="fw-bolder text-primary text-end" colspan="4">Total Average</td>
+											<td class="fw-bolder text-primary">${avg.avg}</td>
+											`;
+						var userTable = document.getElementById('users').getElementsByTagName('tbody')[0];
+						users.forEach(user => {
+							var newRow = userTable.insertRow(userTable.rows.length);
+							newRow.innerHTML = `<td>${user.rollno}</td>
+												<td>${user.name}</td>
+												`;
+						})
+					} else {
+						Swal.fire({
+							text: res.message,
+							icon: res.status,
+							buttonsStyling: false,
+							confirmButtonText: "Ok, got it!",
+							customClass: {
+								confirmButton: "btn btn-primary"
+							}
+						}).then(result => {
+							if (result.isConfirmed) {
+								location.reload("/");
+							}
+						});
+					}
+				}
+			}
+
+			section.addEventListener("change", (E) => {
+				event.preventDefault();
+				xhttp.open("GET", `/reports/${branch.value}/${year.value}/${sem.value}/${section.value}`);
+				xhttp.setRequestHeader("Accept", "application/json");
+				xhttp.setRequestHeader("Content-Type", "application/json");
+				xhttp.send();
+			})
+
+			generate.addEventListener("click", (e) => {
+				event.preventDefault();
+				window.location.href =
+					`/reports/cr/${branch.value}/${year.value}/${sem.value}/${section.value}/${date.value}`;
+			})
+
+			get.addEventListener("click", (e) => {
+				event.preventDefault();
+				xhttp.open("GET", `/reports/get/${sub.value}`);
+				xhttp.setRequestHeader("Accept", "application/json");
+				xhttp.setRequestHeader("Content-Type", "application/json");
+				xhttp.send();
+			})
+
+			button.addEventListener("click", (e) => {
+				e.preventDefault();
+				Swal.fire({
+					text: "Do you want to logout?",
+					icon: "info",
+					buttonsStyling: false,
+					confirmButtonText: "Ok, logout!",
+					showCancelButton: true,
+					customClass: {
+						confirmButton: "btn btn-primary",
+						cancelButton: "btn btn-danger"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						xhttp.open("GET", "/auth/logout");
+						xhttp.setRequestHeader("Accept", "application/json");
+						xhttp.setRequestHeader("Content-Type", "application/json");
+						xhttp.send();
+					}
+				});
+			});
+
+		}
+
+		function confirmDelete(url, name, course_id) {
+			Swal.fire({
+				html: `Are you sure to subject?<br> Name: ${name} Email: ${course_id}`,
+				icon: "info",
+				buttonsStyling: false,
+				confirmButtonText: "Ok, Delete!",
+				showCancelButton: true,
+				customClass: {
+					confirmButton: "btn btn-primary",
+					cancelButton: "btn btn-danger"
+				}
+			}).then(result => {
+				if (result.isConfirmed) {
+					xhttp.open("GET", url);
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send();
+				}
+			});
+		}
+
+		function gotoURL(url) {
+			Swal.fire({
+				text: `Are you sure to perform this operation`,
+				icon: "info",
+				buttonsStyling: false,
+				confirmButtonText: "Ok, Proceed!",
+				showCancelButton: true,
+				customClass: {
+					confirmButton: "btn btn-primary",
+					cancelButton: "btn btn-danger"
+				}
+			}).then(result => {
+				if (result.isConfirmed) {
+					xhttp.open("GET", url);
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send();
+				}
+			});
+		}
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="/assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SVCE Kadapa</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="svce faculty feedback portal" />
+	<meta name="keywords" content="svcekadapa svce svck kadapa" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<script src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+	<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled sidebar-enabled">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="page d-flex flex-column flex-column-fluid">
+			<!--begin::Header-->
+			<div id="kt_header" class="header align-items-stretch">
+				<!--begin::Container-->
+				<div class="container-xxl d-flex align-items-stretch justify-content-between">
+					<!--begin::Brand-->
+					<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 w-lg-225px me-5">
+						<!--begin::Aside mobile toggle-->
+						<div class="btn btn-icon btn-active-icon-primary ms-n2 me-2 d-flex d-lg-none"
+							id="kt_aside_toggle">
+							<!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+							<span class="svg-icon svg-icon-1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none">
+									<path
+										d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
+										fill="black" />
+									<path opacity="0.3"
+										d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z"
+										fill="black" />
+								</svg>
+							</span>
+							<!--end::Svg Icon-->
+						</div>
+						<!--end::Aside mobile toggle-->
+						<!--begin::Logo-->
+						<a href="#">
+							<img alt="Logo" src="/assets/media/logos/svce.png" class="d-none d-lg-inline h-50px" />
+							<img alt="Logo" src="/assets/media/logos/svce.png" class="d-lg-none h-35px" />
+						</a>
+						<!--end::Logo-->
+					</div>
+					<!--end::Brand-->
+					<!--begin::Wrapper-->
+					<div class="d-flex align-items-stretch justify-content-between ml-auto">
+						<!--begin::Toolbar wrapper-->
+						<div class="d-flex align-items-stretch flex-shrink-0">
+							<!--begin::Search-->
+							<div class="d-flex align-items-stretch ms-1 ms-lg-2">
+								<!--begin::Search-->
+								<div id="kt_header_search" class="d-flex align-items-stretch"
+									data-kt-search-keypress="true" data-kt-search-min-length="2"
+									data-kt-search-enter="enter" data-kt-search-layout="menu"
+									data-kt-menu-trigger="auto" data-kt-menu-overflow="false"
+									data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
+									<!--begin::Search toggle-->
+									<div class="d-flex align-items-stretch" data-kt-search-element="toggle"
+										id="kt_header_search_toggle">
+
+										<h1 class="fs-2tx fw-bolder text-primary mb-8 mt-auto">Faculty Feedback Portal
+										</h1>
+
+									</div>
+									<!--end::Search toggle-->
+								</div>
+								<!--end::Search-->
+							</div>
+							<!--end::Search-->
+						</div>
+						<!--end::Toolbar wrapper-->
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--end::Container-->
+			</div>
+			<!--end::Header-->
+			<!--begin::Container-->
+			<div id="kt_content_container" class="d-flex flex-column-fluid align-items-stretch container-xxl">
+				<!--begin::Aside-->
+				<div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside"
+					data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+					data-kt-drawer-width="{default:'200px', '300px': '225px'}" data-kt-drawer-direction="start"
+					data-kt-drawer-toggle="#kt_aside_toggle" data-kt-sticky="true" data-kt-sticky-name="aside-sticky"
+					data-kt-sticky-offset="{default: false, lg: '1px'}" data-kt-sticky-width="{lg: '225px'}"
+					data-kt-sticky-left="auto" data-kt-sticky-top="94px" data-kt-sticky-animation="false"
+					data-kt-sticky-zindex="95">
+					<!--begin::Aside nav-->
+					<div class="hover-scroll-overlay-y my-5 my-lg-5 w-100 ps-4 ps-lg-0 pe-4 me-1"
+						id="kt_aside_menu_wrapper" data-kt-scroll="true"
+						data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto"
+						data-kt-scroll-dependencies="#kt_header" data-kt-scroll-wrappers="#kt_aside"
+						data-kt-scroll-offset="5px">
+						<!--begin::Menu-->
+						<div class="menu menu-column menu-active-bg menu-hover-bg menu-title-gray-700 fs-6 menu-rounded w-100"
+							id="#kt_aside_menu" data-kt-menu="true">
+							<!--begin::Heading-->
+							<div class="menu-item">
+								<div class="menu-content pb-2">
+									<span class="menu-section text-muted text-uppercase fs-7 fw-bolder">Menu</span>
+								</div>
+							</div>
+							<!--end::Heading-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="#" class="menu-link active">
+									<span class="menu-title"><i class="fi fi-rr-home fs-3 text-primary"></i>
+										<pre> </pre><span class="text-primary ml-5"> Home</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/reports" class="menu-link text-hover-primary">
+									<span class="menu-title"><i class="fi fi-rr-document fs-3"></i>
+										<pre> </pre><span class="ml-5"> Reports</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a href="/settings" class="menu-link text-hover-primary">
+									<span class="menu-title"><i class="fi fi-rr-settings fs-3"></i>
+										<pre> </pre><span class="ml-5"> Settings</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+							<!--begin::Menu item-->
+							<div class="menu-item mb-2">
+								<a class="menu-link text-hover-primary" id="logout">
+									<span class="menu-title"><i class="fi fi-rr-sign-out-alt fs-3"></i>
+										<pre> </pre><span>Logout</span></span>
+								</a>
+							</div>
+							<!--end::Menu item-->
+						</div>
+						<!--end::Menu-->
+					</div>
+					<!--end::Aside nav-->
+				</div>
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="wrapper d-flex flex-column flex-row-fluid mt-5 mt-lg-10" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content flex-column-fluid" id="kt_content">
+						<div class="card mb-5 mb-xl-8">
+							<!--begin::Header-->
+							<div class="card-header border-0 pt-5">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">Upload Users</span>
+								</h3>
+								<div class="card-toolbar">
+									<!--begin::Menu-->
+									<button class="btn btn-primary" id="users">Add Users</button>
+									<!--end::Menu-->
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div class="card-body py-3">
+								<!--begin::Input group-->
+								<div class="form-group row">
+									<!--begin::Label-->
+									<label class="col-lg-2 col-form-label text-lg-right">Upload Files:</label>
+									<!--end::Label-->
+
+									<!--begin::Col-->
+									<div class="col-lg-10">
+										<input type="file" name="file" id="file">
+									</div>
+									<!--end::Col-->
+								</div>
+								<div id='output'></div>
+								<!--begin::Table container-->
+								<div class="table-responsive" id="myTable">
+									<!--begin::Table-->
+									<table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+										<!--begin::Table head-->
+										<thead>
+											<tr class="fw-bolder text-muted">
+												<th>Roll No</th>
+												<th>Name</th>
+												<th>Email</th>
+												<th>Password</th>
+												<th>Branch</th>
+												<th>Year</th>
+												<th>Sem</th>
+												<th>Section</th>
+												<th>Role</th>
+											</tr>
+										</thead>
+										<!--end::Table head-->
+										<!--begin::Table body-->
+										<tbody>
+											<tr></tr>
+										</tbody>
+										<!--end::Table body-->
+									</table>
+									<!--end::Table-->
+								</div>
+								<!--end::Table container-->
+							</div>
+							<!--begin::Body-->
+						</div>
+						<div class="card mb-5 mb-xl-8">
+							<!--begin::Header-->
+							<div class="card-header border-0 pt-5">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">
+										Your Assigned class is
+										<%= user.year %> - <%= user.sem %> <%= user.branch.toUpperCase() %> -
+										<%= user.section %>
+								</h3>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div class="card-body py-3">
+								<!--begin::Table container-->
+								<div class="table-responsive">
+									<!--begin::Table-->
+									<table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+										<!--begin::Table head-->
+										<thead>
+											<tr class="fw-bolder text-muted">
+												<th>Roll No</th>
+												<th>Name</th>
+												<th>Email</th>
+												<th>Branch</th>
+												<th>Verified</th>
+												<th>Assigned Class</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<!--end::Table head-->
+										<!--begin::Table body-->
+										<tbody>
+											<% users.forEach(u => { %>
+											<tr>
+												<td><%= u.rollno %></td>
+												<td><%= u.name %></td>
+												<td><%= u.email %> </td>
+												<td><%= u.branch %> </td>
+												<td>
+													<% if(!u.verified) { %>
+													<span class="badge badge-danger">Not Verified</span>
+													<% } else { %>
+													<span class="badge badge-success">Verified</span>
+													<% } %>
+												</td>
+												<td><%= u.year %> - <%= u.sem %> <%= user.branch.toUpperCase() %> -
+													<%= u.section %> </td>
+												<td>
+													<a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm <%=u.verified==true ? " disabled" : "" %>"
+														onclick="return verifyUser('/verify-user/<%= u.id %>', '<%= u.name %>', '<%= u.email %>')">
+														<i class="fi fi-rr-check"></i>
+													</a>
+													<a href="/edit-user/<%= u.id %>"
+														class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+														<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+														<span class="svg-icon svg-icon-3">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24"
+																height="24" viewBox="0 0 24 24" fill="none">
+																<path opacity="0.3"
+																	d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
+																	fill="black"></path>
+																<path
+																	d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
+																	fill="black"></path>
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+													</a>
+													<a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+														onclick="confirmDelete('/delete-user/<%= u.id %>', '<%= u.name %>', '<%= u.email %>')">
+														<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+														<span class="svg-icon svg-icon-3">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24"
+																height="24" viewBox="0 0 24 24" fill="none">
+																<path
+																	d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+																	fill="black"></path>
+																<path opacity="0.5"
+																	d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+																	fill="black"></path>
+																<path opacity="0.5"
+																	d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+																	fill="black"></path>
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+													</a>
+												</td>
+											</tr>
+											<% }) %>
+										</tbody>
+										<!--end::Table body-->
+									</table>
+									<!--end::Table-->
+								</div>
+								<!--end::Table container-->
+							</div>
+							<!--begin::Body-->
+							<div class="card-footer py-3">
+								<a onclick="gotoURL('/verify-all')" class="btn btn-primary ml-5">Verify all</a>
+								<a onclick="gotoURL('/delete-all')" class="btn btn-primary ml-5">Delete all</a>
+								<a onclick="gotoURL('/clear-feedback-status')" class="btn btn-primary ml-5">Clear Feedback Status</a>
+							</div>
+						</div>
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+					<div class="d-flex flex-center flex-column-auto p-10">
+						<!--begin::Links-->
+						<div class="d-flex align-items-center fw-bold fs-6">
+							<a href="#" class="text-muted fs-bolder px-2">SVCE Kadapa</a>
+						</div>
+						<!--end::Links-->
+					</div>
+					<!--end::Footer-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Container-->
+		</div>
+		<!--end::Page-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script type="text/javascript">
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				const res = JSON.parse(xhttp.responseText);
+				Swal.fire({
+					text: res.message,
+					icon: res.status,
+					buttonsStyling: false,
+					confirmButtonText: "Ok, got it!",
+					customClass: {
+						confirmButton: "btn btn-primary"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						location.reload("/");
+					}
+				});
+			}
+		}
+		window.onload = function () {
+			const button = document.getElementById("logout");
+			var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+			let users = document.getElementById("users");
+
+			button.addEventListener("click", (e) => {
+				e.preventDefault();
+				Swal.fire({
+					text: "Do you want to logout?",
+					icon: "info",
+					buttonsStyling: false,
+					confirmButtonText: "Ok, logout!",
+					showCancelButton: true,
+					customClass: {
+						confirmButton: "btn btn-primary",
+						cancelButton: "btn btn-danger"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						xhttp.open("GET", "/auth/logout");
+						xhttp.setRequestHeader("Accept", "application/json");
+						xhttp.setRequestHeader("Content-Type", "application/json");
+						xhttp.send();
+					}
+				});
+			});
+
+			users.addEventListener("click", (e) => {
+				e.preventDefault();
+				Swal.fire({
+					text: "Are you sure to submit all details?",
+					icon: "info",
+					buttonsStyling: false,
+					confirmButtonText: "Ok, Submit!",
+					showCancelButton: true,
+					customClass: {
+						confirmButton: "btn btn-primary",
+						cancelButton: "btn btn-danger"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						xhttp.open("POST", "/add-users");
+						xhttp.setRequestHeader("Accept", "application/json");
+						xhttp.setRequestHeader("Content-Type", "application/json");
+						xhttp.send(JSON.stringify({
+							jsonData
+						}));
+					}
+				});
+			})
+
+			var oFileIn = document.getElementById('file');
+			var output = document.getElementById("output");
+			oFileIn.addEventListener("change", (e) => {
+				fileReader(e);
+			});
+
+			var jsonData = [];
+
+			function fileReader(oEvent) {
+				var oFile = oEvent.target.files[0];
+				var sFilename = oFile.name;
+
+				var reader = new FileReader();
+				var result = {};
+
+				reader.onload = function (e) {
+					var data = e.target.result;
+					data = new Uint8Array(data);
+					var workbook = XLSX.read(data, {
+						type: 'array'
+					});
+					var result = {};
+					workbook.SheetNames.forEach(function (sheetName) {
+						var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
+							header: 1
+						});
+						if (roa.length) result[sheetName] = roa;
+					});
+					// see the result, caution: it works after reader event is done.
+					console.log(result);
+					let res = result.Sheet1;
+					for (i = 1; i < res.length; i++) {
+						let user = {
+							rollno: res[i][0],
+							name: res[i][1],
+							email: res[i][2],
+							password: res[i][3],
+							branch: res[i][4],
+							year: res[i][5],
+							sem: res[i][6],
+							section: res[i][7],
+							role: res[i][8]
+						}
+						jsonData.push(user);
+					}
+					appendRow(jsonData);
+				};
+				reader.readAsArrayBuffer(oFile);
+			}
+
+			function appendRow(data) {
+				data.forEach(user => {
+					var newRow = tableRef.insertRow(tableRef.rows.length);
+					newRow.innerHTML = `<td>${user.rollno}</td>
+					<td>${user.name}</td>
+					<td>${user.email}</td>
+					<td>${user.password}</td>
+					<td>${user.branch}</td>
+					<td>${user.year}</td>
+					<td>${user.sem}</td>
+					<td>${user.section}</td>
+					<td>${user.role}</td>
+					`;
+				})
+			}
+		}
+
+		function confirmDelete(url, name, email) {
+			Swal.fire({
+				text: `Are you sure to delete user? Name: ${name} Email: ${email}`,
+				icon: "info",
+				buttonsStyling: false,
+				confirmButtonText: "Ok, Delete!",
+				showCancelButton: true,
+				customClass: {
+					confirmButton: "btn btn-primary",
+					cancelButton: "btn btn-danger"
+				}
+			}).then(result => {
+				if (result.isConfirmed) {
+					xhttp.open("GET", url);
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send();
+				}
+			});
+		}
+
+		function gotoURL(url) {
+			Swal.fire({
+				text: `Are you sure to perform this operation`,
+				icon: "info",
+				buttonsStyling: false,
+				confirmButtonText: "Ok, Proceed!",
+				showCancelButton: true,
+				customClass: {
+					confirmButton: "btn btn-primary",
+					cancelButton: "btn btn-danger"
+				}
+			}).then(result => {
+				if (result.isConfirmed) {
+					xhttp.open("GET", url);
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send();
+				}
+			});
+		}
+
+		function verifyUser(url, name, email) {
+			Swal.fire({
+				text: `Are you sure to verify user? Name: ${name} Email: ${email}`,
+				icon: "info",
+				buttonsStyling: false,
+				confirmButtonText: "Ok, verify!",
+				showCancelButton: true,
+				customClass: {
+					confirmButton: "btn btn-primary",
+					cancelButton: "btn btn-danger"
+				}
+			}).then(result => {
+				if (result.isConfirmed) {
+					xhttp.open("GET", url);
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send();
+				}
+			});
+		}
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="/assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>

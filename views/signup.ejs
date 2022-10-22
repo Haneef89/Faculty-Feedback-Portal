@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SVCE Kadapa</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="svce faculty feedback portal" />
+	<meta name="keywords" content="svcekadapa svce svck kadapa" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+</head>
+
+<body>
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Authentication - New password -->
+		<div
+			class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+			<!--begin::Content-->
+			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+				<!--begin::Logo-->
+				<a href="/" class="mb-2">
+					<img alt="Logo" src="/assets/media/logos/svce.png" class="h-70px" />
+				</a>
+				<h1 class="fs-2tx fw-bolder text-primary mb-10">Faculty Feedback Portal</h1>
+				<!--end::Logo-->
+				<!--begin::Wrapper-->
+				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+					<!--begin::Form-->
+					<form class="form w-100" action="#">
+						<!--begin::Heading-->
+						<div class="text-center mb-10">
+							<!--begin::Title-->
+							<h1 class="text-dark mb-3">Sign Up</h1>
+							<!--end::Title-->
+							<!--begin::Link-->
+							<div class="text-gray-400 fw-bold fs-4">Have have an account?
+								<a href="/" class="link-primary fw-bolder">Sign in</a></div>
+							<!--end::Link-->
+						</div>
+						<!--begin::Heading-->
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6 required">Roll No</label>
+							<input class="form-control form-control-lg form-control-solid" type="name" placeholder=""
+								value="" name="rollno" id="rollno" autocomplete="off" required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Heading-->
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6 required">Name</label>
+							<input class="form-control form-control-lg form-control-solid" type="name" placeholder=""
+								value="" name="name" id="name" autocomplete="off" required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Email</label>
+							<input class="form-control form-control-lg form-control-solid" type="email" placeholder=""
+								value="" name="email" id="email" autocomplete="off" required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="mb-7 fv-row">
+							<!--begin::Wrapper-->
+							<label class="form-label fw-bolder text-dark fs-6">Password</label>
+							<!--end::Label-->
+							<input class="form-control form-control-lg form-control-solid" type="password" id="password"
+								placeholder="" name="password" autocomplete="off" required />
+						</div>
+						<!--end::Input group=-->
+						<!--begin::Input group-->
+						<div class="mb-7 fv-row">
+							<!--begin::Wrapper-->
+							<label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
+							<!--end::Label-->
+							<input class="form-control form-control-lg form-control-solid" type="password"
+								id="c-password" placeholder="" name="password" autocomplete="off" required />
+						</div>
+						<!--end::Input group=-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<label class="form-check form-check-custom form-check-solid form-check-inline">
+								<input class="form-check-input" id="show-password" type="checkbox"
+									name="showPassword" />
+								<span class="form-check-label fw-bold text-gray-700 fs-6">Show
+									password</span>
+							</label>
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-10">
+							<div class="col-sm-6">
+								<label class="form-label fw-bolder text-dark fs-6 required">Branch</label>
+								<select class="form-select" id="branch" name="branch">
+									<option value="cse">CSE</option>
+									<option value="ece">ECE</option>
+									<option value="csm">CSM</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label class="form-label fw-bolder text-dark fs-6 required">Year</label>
+								<select class="form-select" id="year" name="year">
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+									<option value="4">IV</option>
+								</select>
+							</div>
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-10">
+							<div class="col-sm-6">
+								<label class="form-label fw-bolder text-dark fs-6 required">Semester</label>
+								<select class="form-select" id="sem" name="sem">
+									<option value="1">1</option>
+									<option value="2">2</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label class="form-label fw-bolder text-dark fs-6 required">Section</label>
+								<select class="form-select" id="section" name="section">
+									<option value="A">A</option>
+									<option value="B">B</option>
+								</select>
+							</div>
+						</div>
+						<!--begin::Actions-->
+						<div class="text-center">
+							<!--begin::Submit button-->
+							<button id="submit" class="btn btn-lg btn-primary w-100 mb-0">
+								<span class="indicator-label">Create Account</span>
+								<span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+							</button>
+							<!--end::Submit button-->
+						</div>
+						<!--end::Actions-->
+					</form>
+					<!--end::Form-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="d-flex flex-center flex-column-auto p-10">
+				<!--begin::Links-->
+				<div class="d-flex align-items-center fw-bold fs-6">
+					<a href="#" class="text-muted text-hover-primary px-2">SVCE Kadapa</a>
+				</div>
+				<!--end::Links-->
+			</div>
+			<!--end::Footer-->
+		</div>
+		<!--end::Authentication - New password-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script>
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				let res = JSON.parse(xhttp.responseText);
+				Swal.fire({
+					text: res.message,
+					icon: res.status,
+					buttonsStyling: false,
+					customClass: {
+						confirmButton: "btn btn-primary"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						if (res.status == "success") {
+							window.location.href = "/";
+						}
+					}
+				});
+			}
+		};
+		window.onload = (e) => {
+			let checkBox = document.getElementById("show-password");
+			let passwordInputBox = document.getElementById("password");
+			let cPasswordInputBox = document.getElementById("c-password");
+			checkBox.addEventListener("click", () => {
+				if (checkBox.checked == true) {
+					passwordInputBox.setAttribute("type", "text");
+					cPasswordInputBox.setAttribute("type", "text");
+				} else {
+					passwordInputBox.setAttribute("type", "password");
+					cPasswordInputBox.setAttribute("type", "password");
+				}
+			})
+			const button = document.getElementById('submit');
+
+			let emailInput = document.getElementById("email");
+			let branchInput = document.getElementById("branch");
+			let yearInput = document.getElementById("year");
+			let semInput = document.getElementById("sem");
+			let sectionInput = document.getElementById("section");
+			let rollno = document.getElementById("rollno");
+			let name = document.getElementById("name");
+			let toastMessage = document.getElementById("toast-message");
+
+			function getData() {
+				const data = {
+					email: emailInput.value,
+					password: passwordInputBox.value,
+					name: name.value,
+					rollno: rollno.value.toUpperCase(),
+					year: year.value,
+					sem: semInput.value,
+					branch: branchInput.value,
+					section: sectionInput.value,
+					verified: false,
+					feedback: false
+				}
+				return data;
+			}
+
+			button.addEventListener("click", e => {
+				e.preventDefault();
+				let data = getData();
+				if (passwordInputBox.value != cPasswordInputBox.value) {
+					Swal.fire({
+						text: "Passwords don't match",
+						icon: "error",
+						buttonsStyling: false,
+						customClass: {
+							confirmButton: "btn btn-primary"
+						}
+					})
+				} else {
+					login(data);
+				}
+			});
+
+			function login(data) {
+				xhttp.open("POST", "/signup");
+				xhttp.setRequestHeader("Content-Type", "application/json");
+				xhttp.send(JSON.stringify(data));
+			}
+		}
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="./assets/plugins/global/plugins.bundle.js"></script>
+	<script src="./assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--end::Javascript-->
+</body>
+
+</html>

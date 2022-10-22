@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SVCE Kadapa</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="svce faculty feedback portal" />
+	<meta name="keywords" content="svcekadapa svce svck kadapa" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+</head>
+
+<body>
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Authentication - New password -->
+		<div
+			class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+			<!--begin::Content-->
+			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+				<!--begin::Logo-->
+				<a href="/" class="mb-2">
+					<img alt="Logo" src="/assets/media/logos/svce.png" class="h-70px" />
+				</a>
+				<h1 class="fs-2tx fw-bolder text-primary mb-10">Faculty Feedback Portal</h1>
+				<!--end::Logo-->
+				<!--begin::Wrapper-->
+				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+					<!--begin::Form-->
+					<form class="form w-100" action="#">
+						<!--begin::Heading-->
+						<div class="text-center mb-10">
+							<!--begin::Title-->
+							<h1 class="text-dark mb-3">Sign In</h1>
+							<!--end::Title-->
+							<!--begin::Link-->
+							<div class="text-gray-400 fw-bold fs-4">Don't have an account?
+								<a href="/signup" class="link-primary fw-bolder">Create an Account</a></div>
+							<!--end::Link-->
+						</div>
+						<!--begin::Heading-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<!--begin::Label-->
+							<label class="form-label fs-6 fw-bolder text-dark">Email</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input class="form-control form-control-lg form-control-solid" id="email" type="text"
+								name="email" autocomplete="off" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<!--begin::Wrapper-->
+							<div class="d-flex flex-stack mb-2">
+								<!--begin::Label-->
+								<label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+								<!--end::Label-->
+								<!--begin::Link-->
+								<a href="password-reset.html" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+								<!--end::Link-->
+							</div>
+							<!--end::Wrapper-->
+							<!--begin::Input-->
+							<input class="form-control form-control-lg form-control-solid" id="password" type="password"
+								name="password" autocomplete="off" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<label class="form-check form-check-custom form-check-solid form-check-inline">
+								<input class="form-check-input" id="showPassword" type="checkbox" name="showPassword" />
+								<span class="form-check-label fw-bold text-gray-700 fs-6">Show password</span>
+							</label>
+						</div>
+						<!--end::Input group-->
+						<!--begin::Actions-->
+						<div class="text-center">
+							<!--begin::Submit button-->
+							<button id="submit" class="btn btn-lg btn-primary w-100 mb-0">
+								<span class="indicator-label">login</span>
+								<span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+							</button>
+							<!--end::Submit button-->
+						</div>
+						<!--end::Actions-->
+					</form>
+					<!--end::Form-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="d-flex flex-center flex-column-auto p-10">
+				<!--begin::Links-->
+				<div class="d-flex align-items-center fw-bold fs-6">
+					<a href="#" class="text-muted text-hover-primary px-2">SVCE Kadapa</a>
+				</div>
+				<!--end::Links-->
+			</div>
+			<!--end::Footer-->
+		</div>
+		<!--end::Authentication - New password-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script>
+		window.onload = (e) => {
+			let checkBox = document.getElementById("showPassword");
+			let passwordInputBox = document.getElementById("password");
+			checkBox.addEventListener("click", () => {
+				if (checkBox.checked == true) {
+					passwordInputBox.setAttribute("type", "text");
+				} else {
+					passwordInputBox.setAttribute("type", "password");
+				}
+			})
+			const button = document.getElementById('submit');
+
+			let emailInput = document.getElementById("email");
+			let toastMessage = document.getElementById("toast-message");
+
+			function getData() {
+				const data = {
+					email: emailInput.value,
+					password: passwordInputBox.value
+				}
+				return data;
+			}
+
+			button.addEventListener("click", e => {
+				e.preventDefault();
+				let data = getData();
+				login(data);
+			});
+
+			function login(data) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						let res = JSON.parse(xhttp.responseText);
+						Swal.fire({
+							text: res.message,
+							icon: res.status,
+							buttonsStyling: false,
+							confirmButtonText: res.action,
+							customClass: {
+								confirmButton: "btn btn-primary"
+							}
+						}).then(result => {
+							if (result.isConfirmed) {
+								if (res.status == "success") {
+									location.reload("/");
+								}
+							}
+						});
+					}
+				};
+				xhttp.open("POST", "/auth/signin");
+				xhttp.setRequestHeader("Content-Type", "application/json");
+				xhttp.send(JSON.stringify(data));
+			}
+		}
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="./assets/plugins/global/plugins.bundle.js"></script>
+	<script src="./assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--end::Javascript-->
+</body>
+
+</html>

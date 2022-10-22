@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SVCE KADAPA</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="svce faculty feedback portal" />
+	<meta name="keywords" content="svcekadapa svce svck kadapa" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+</head>
+
+<body>
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Authentication - New password -->
+		<div
+			class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+			<!--begin::Content-->
+			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+				<!--begin::Logo-->
+				<a href="/" class="mb-2">
+					<img alt="Logo" src="/assets/media/logos/svce.png" class="h-70px" />
+				</a>
+				<h1 class="fs-2tx fw-bolder text-primary mb-10">Faculty Feedback Portal</h1>
+				<!--end::Logo-->
+				<!--begin::Wrapper-->
+				<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+					<!--begin::Form-->
+					<form class="form w-100" id="kt_sign_up_form">
+						<!--begin::Heading-->
+						<div class="mb-10 text-center">
+							<!--begin::Title-->
+							<h1 class="text-dark mb-3">Dear Admin, Please Create an Account</h1>
+							<!--end::Title-->
+						</div>
+						<!--end::Heading-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Name</label>
+							<input class="form-control form-control-lg form-control-solid" type="name" placeholder=""
+								name="name" id="name" autocomplete="off" required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Email</label>
+							<input class="form-control form-control-lg form-control-solid" type="email" placeholder=""
+								name="email" id="email" autocomplete="off" required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="mb-7 fv-row">
+							<!--begin::Wrapper-->
+							<label class="form-label fw-bolder text-dark fs-6">Password</label>
+							<!--end::Label-->
+							<input class="form-control form-control-lg form-control-solid" type="password" id="password"
+								placeholder="" name="password" autocomplete="off" required />
+						</div>
+						<!--end::Input group=-->
+
+						<!--begin::Input group-->
+						<div class="fv-row mb-5">
+							<label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
+							<input class="form-control form-control-lg form-control-solid" type="password"
+								id="confirm-password" placeholder="" name="confirm-password" autocomplete="off"
+								required />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<label class="form-check form-check-custom form-check-solid form-check-inline">
+								<input class="form-check-input" id="show-password" type="checkbox"
+									name="showPassword" />
+								<span class="form-check-label fw-bold text-gray-700 fs-6">Show password</span>
+							</label>
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-10">
+							<label class="form-label fw-bolder text-dark fs-6">Branch</label>
+							<select class="form-select" id="branch" name="branch">
+								<option value="cse">CSE</option>
+								<option value="ece">ECE</option>
+								<option value="csm">CSM</option>
+							</select>
+						</div>
+						<!--end::Input group-->
+						<!--begin::Actions-->
+						<div class="text-center">
+							<!--begin::Submit button-->
+							<button id="submit" class="btn btn-lg btn-primary w-100 mb-0">
+								<span class="indicator-label">Create Account</span>
+								<span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+							</button>
+							<!--end::Submit button-->
+						</div>
+						<!--begin::Toast-->
+						<div class="position-fixed top-0 end-0 p-3 z-index-3">
+							<div id="kt_docs_toast_toggle" class="toast" role="alert" aria-live="assertive"
+								aria-atomic="true">
+								<div class="toast-header">
+									<span class="svg-icon svg-icon-2 svg-icon-primary me-3"><img height="30px"
+											src="./assets/media/logos/favicon.ico"></span>
+									<strong class="me-auto">SVCE Kadapa</strong>
+									<small>Faculty Feedback Portal</small>
+									<button type="button" class="btn-close" data-bs-dismiss="toast"
+										aria-label="Close"></button>
+								</div>
+								<div class="toast-body" id="toast-message"></div>
+							</div>
+						</div>
+						<!--end::Toast-->
+						<!--end::Actions-->
+					</form>
+					<!--end::Form-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="d-flex flex-center flex-column-auto p-10">
+				<!--begin::Links-->
+				<div class="d-flex align-items-center fw-bold fs-6">
+					<a href="#" class="text-muted text-hover-primary px-2">SVCE Kadapa</a>
+				</div>
+				<!--end::Links-->
+			</div>
+			<!--end::Footer-->
+		</div>
+		<!--end::Authentication - New password-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<script>
+		window.onload = (e) => {
+			let checkBox = document.getElementById("show-password");
+			let passwordInputBox = document.getElementById("password");
+			let confirmPasswordInputBox = document.getElementById("confirm-password");
+			checkBox.addEventListener("click", () => {
+				if (checkBox.checked == true) {
+					passwordInputBox.setAttribute("type", "text");
+					confirmPasswordInputBox.setAttribute("type", "text");
+				} else {
+					passwordInputBox.setAttribute("type", "password");
+					confirmPasswordInputBox.setAttribute("type", "password");
+				}
+			})
+			const button = document.getElementById('submit');
+			const toastElement = document.getElementById('kt_docs_toast_toggle');
+			const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+
+			let nameInput = document.getElementById("name");
+			let emailInput = document.getElementById("email");
+			let branchInput = document.getElementById("branch");
+			let toastMessage = document.getElementById("toast-message");
+
+			button.addEventListener("click", e => {
+				e.preventDefault();
+				let data = getData();
+				validate(data);
+			})
+
+			function getData() {
+				const data = {
+					name: nameInput.value,
+					email: emailInput.value,
+					password: passwordInputBox.value,
+					confirmPassword: confirmPasswordInputBox.value,
+					branch: branchInput.value
+				}
+				return data;
+			}
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					callSwal(xhttp.responseText);
+				} else {
+					Swal.fire({
+					text: xhttp.responseText,
+					icon: "danger",
+					buttonsStyling: false,
+					confirmButtonText: "Ok, got it!",
+					customClass: {
+						confirmButton: "btn btn-primary"
+					}
+				})
+				}
+			};
+
+			function validate(data) {
+				if (data.password !== data.confirmPassword) {
+					toastMessage.innerHTML =
+						`<b>Dear ${data.name}, <br><span class="text-danger">Password and Confirm Password Fields don't match</span></b>`;
+					toast.show();
+				} else {
+					xhttp.open("POST", "/auth/register/admin");
+					xhttp.setRequestHeader("Accept", "application/json");
+					xhttp.setRequestHeader("Content-Type", "application/json");
+					xhttp.send(JSON.stringify(data));
+				}
+			}
+
+			function callSwal(text) {
+				Swal.fire({
+					text: JSON.parse(text).message,
+					icon: "success",
+					buttonsStyling: false,
+					confirmButtonText: "Ok, got it!",
+					customClass: {
+						confirmButton: "btn btn-primary"
+					}
+				}).then(result => {
+					if (result.isConfirmed) {
+						location.reload("/");
+					}
+				});
+			}
+
+		}
+	</script>
+
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="/assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+</body>
+
+</html>
