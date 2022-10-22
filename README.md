@@ -22,3 +22,19 @@ Mentor can edit students of their assigned class
 Mentor can see live feedback status
 Admin can generate consolidatory report
 Admin can also view report of individual subject.
+
+Demo accounts
+----------------------
+Admin - admin@gmail.com
+password - admin
+
+Mentor - mentor@gmail.com
+password - 123123
+
+Students 
+s1@gmail.com
+s2@gmail.com
+s3@gmail.com
+
+password - 123123
+same for all three student accounts
