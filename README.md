@@ -4,7 +4,7 @@ Link: https://facultyfeedbackportal.azurewebsites.net
 
 Faculty Feedback portal is an intranet  AJAX based application that is used to collect feedback from students on mentor’s performance.
 
-Using this feedback portal, it is easy to schedule, organize and generate reports.
+Using this feedback portal, we can be able to schedule, organize and generate reports.
 
 This web application is made using
 
